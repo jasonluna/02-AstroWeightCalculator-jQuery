@@ -1,3 +1,4 @@
+// listing planets and their values 
 var planets = [
     ['Sun', 27.9],
     ['Jupiter', 2.54],
@@ -12,18 +13,21 @@ var planets = [
     ['Neptune', 1.148],
     ['Pluto', 0.06]
 ];
-
+// populate the options bar with planet names 
 for (var i = 0; i < planets.length; i++) {
     $("<option>").val(planets[i][1]).html(planets[i][0]).appendTo('#gravity');
 
 }
+// getting the values from the user weight and the planet selected and calculating the total
 $(document).ready(function() {
-    $('.button').on('click', function() {
+    $('#button').on('click', function() {
         var weight = $('#weight').val();
         var gravity = $('#gravity').val();
         var total = weight * gravity;
         var names = $('#planets, option:selected').html();
-        $('#results').html('if you were on ' + names + ' you would weigh ' + total + ' lbs');
+
+        // posting the results in the html page
+        $('#results').html('if you were on ' + names + ' you would weigh ' + parseInt(total) + ' lbs');
 
 
     })
